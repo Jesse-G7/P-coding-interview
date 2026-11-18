@@ -8,6 +8,11 @@ def get_popular_skus():
     query = """
     -- WRITE YOUR SQL HERE
     """
+
+    SELECT sku
+    FROM Order_Items o
+    WHERE SUM(o.quantity)>1
+    GROUND BY sku;
     
     cursor.execute(query)
     return cursor.fetchall()
