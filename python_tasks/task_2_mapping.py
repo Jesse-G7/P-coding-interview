@@ -3,8 +3,15 @@
 # and values are the count of occurrences.
 
 def count_categories(categories):
-    # TODO: Write your logic here
-    pass
+      result = {}
+  for i in categories:
+    if i not in result:
+      result[i] = 1
+    else:
+      result[i] +=1
+
+  return result
+  
 
 # Test Case
 data = ['Brakes', 'Engine', 'Brakes', 'Tools', 'Engine', 'Brakes']
