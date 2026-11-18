@@ -9,6 +9,13 @@ def get_customer_spend():
     query = """
     -- WRITE YOUR SQL HERE
     """
+    SELECT SUM(o.price * o.quantity) AS totalspend
+    FROM Order_Items order
+    JOIN Orders o ON order.order_id = o.order_id
+    JOIN Customers c ON order.customer_id = c.customer_id
+    GROUP BY c.Name;
+
+
     
     cursor.execute(query)
     results = cursor.fetchall()
