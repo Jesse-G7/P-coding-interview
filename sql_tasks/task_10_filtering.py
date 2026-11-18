@@ -8,6 +8,12 @@ def get_pending_customers():
     query = """
     -- WRITE YOUR SQL HERE
     """
+    SELECT c.email, o.order_date
+    FROM Customers c
+    JOIN Orders o ON c.customer_id = o.customer_id
+    WHERE o.status = 'Pending';
+    
+
     
     cursor.execute(query)
     return cursor.fetchall()
